@@ -9,7 +9,7 @@
   },
   "matrix_pins": {
     "cols": ["GP9", "GP10", "GP11", "GP12", "GP13", "GP14", "GP15"],
-    "rows": ["GP4", "GP5", "GP6", "GP7", "GP8"]
+    "rows": ["GP8", "GP7", "GP6", "GP5", "GP4"]
   },
-  "diode_direction": "COL2ROW",
+  "diode_direction": "COL2ROW"
 }
