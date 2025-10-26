@@ -3,8 +3,8 @@
   "manufacturer": "Falbatech",
   "maintainer": "Basti-Embedded",
   "usb": {
-    "device_version": "1.0.0",
-    "pid": "0x0000",
+    "device_version": "1.0.1",
+    "pid": "0x5244",
     "vid": "0xFEED"
   },
   "processor": "RP2040",
@@ -24,6 +24,7 @@
     }
   },
   "split": {
+    "main": "left",
     "enabled": true
   },
   "layouts": {
