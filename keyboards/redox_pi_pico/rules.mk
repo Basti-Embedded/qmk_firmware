@@ -1,0 +1,3 @@
+# setup serial uart
+SPLIT_KEYBOARD = yes
+SERIAL_DRIVER = vendor
