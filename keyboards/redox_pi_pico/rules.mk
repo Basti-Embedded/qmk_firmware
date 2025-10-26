@@ -1,3 +1,2 @@
-# setup serial uart
-SPLIT_KEYBOARD = yes
-SERIAL_DRIVER = vendor
+AUDIO_SUPPORTED = no
+BACKLIGHT_SUPPORTED = no
