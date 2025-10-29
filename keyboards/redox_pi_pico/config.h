@@ -7,6 +7,15 @@
 /* Oneshot timeout (adjust as needed) */
 #define ONESHOT_TIMEOUT 500
 
+/* home row mod options */
+/* when a mod key is pressed and held and no other key is pressed the normal key is sent */
+#define RETRO_TAPPING
+/* increase the tapping term for home row mods */
+#define TAPPING_TERM 250
+
+/* option for caps word */
+//#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
 /*
   Split serial (RP2040) configuration
 
@@ -18,7 +27,7 @@
   - Full-duplex: Connect GP0 (left) to GP0 (right) AND GP1 (left) to GP1 (right)
 */
 
-// #define USE_FULL_DUPLEX
+#define USE_FULL_DUPLEX
 
 #ifdef USE_FULL_DUPLEX
     // FULL-DUPLEX: Two wires (GP0<->GP0 and GP1<->GP1)
@@ -34,8 +43,7 @@
 #endif
 
 /* Specify UART driver for RP2040 */
-#define SERIAL_USART_DRIVER SIOD0
-#define SERIAL_USART_TX_PAL_MODE 2  // UART function
+#define SERIAL_PIO_USE_PIO1
 
 /* Split Keyboard */
 #define SPLIT_HAND_PIN GP28
