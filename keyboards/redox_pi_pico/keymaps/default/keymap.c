@@ -1,5 +1,6 @@
 // Copyright 2023 QMK
 // SPDX-License-Identifier: GPL-2.0-or-later
+// https://docs.qmk.fm/keycodes
 
 #include QMK_KEYBOARD_H
 
@@ -22,7 +23,7 @@ enum custom_keycodes {
 
 // Shortcut to make keymap more readable
 
-#define HOME_A LGUI_T(KC_A)
+#define HOME_A LSG_T(KC_A)
 #define HOME_S LALT_T(KC_S)
 #define HOME_D LCTL_T(KC_D)
 #define HOME_F LSFT_T(KC_F)
@@ -30,9 +31,10 @@ enum custom_keycodes {
 #define HOME_J LSFT_T(KC_J)
 #define HOME_K LCTL_T(KC_K)
 #define HOME_L LALT_T(KC_L)
-#define HOME_SCLN LGUI_T(KC_SCLN)
+#define HOME_SCLN LSG_T(KC_SCLN)
 
-#define SCRAP LGUI(KC_TAB)
+#define SCRAP_1 LSG(KC_EQUAL)
+#define SCRAP_2 LSG(KC_MINUS)
 
 #define Q1 LT(_NAV, KC_TAB)
 #define Q2 LT(_SYMB, KC_ESC)
@@ -47,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      CW_TOGG ,HOME_A  ,HOME_S  ,HOME_D  ,HOME_F  ,KC_G    ,MACRO3  ,                          MACRO1  ,KC_H    ,HOME_J  ,HOME_K  ,HOME_L  ,HOME_SCLN,KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,SCRAP   ,MACRO5  ,        MACRO6  ,MACRO7  ,KC_N    ,KC_M    ,KC_COMM ,KC_DOT  ,KC_SLSH ,KC_RSFT ,
+     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,SCRAP_1 ,SCRAP_2 ,        MACRO6  ,MACRO7  ,KC_N    ,KC_M    ,KC_COMM ,KC_DOT  ,KC_SLSH ,KC_RSFT ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
      KC_LCTL ,KC_LWIN ,KC_LALT ,KC_GRV  ,     Q2      ,    KC_SPC  ,KC_ENT  ,        KC_DEL  ,KC_BSPC,     Q1           ,KC_LBRC ,KC_RBRC ,KC_BSLS ,KC_RGHT
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
@@ -150,11 +152,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case MACRO5:
             if (record->event.pressed) {
                 // when keycode is pressed
-                SEND_STRING(
-                        SS_TAP(X_SPC)
-                        SS_TAP(X_E)
-                        SS_TAP(X_T)
-                        );
             } else {
                 // when keycode is released
             }
@@ -169,14 +166,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case MACRO7:
             if (record->event.pressed) {
                 // when keycode is pressed
-                SEND_STRING(
-                        SS_DOWN(X_LSFT)
-                        SS_TAP(X_SCLN)
-                        SS_UP(X_LSFT)
-                        SS_TAP(X_W)
-                        SS_TAP(X_A)
-                        SS_TAP(X_ENT)
-                        );
             } else {
                 // when keycode is released
             }

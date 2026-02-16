@@ -9,9 +9,9 @@
 
 /* home row mod options */
 /* when a mod key is pressed and held and no other key is pressed the normal key is sent */
-#define RETRO_TAPPING
+// #define RETRO_TAPPING
 /* increase the tapping term for home row mods */
-#define TAPPING_TERM 250
+#define TAPPING_TERM 200
 
 /* option for caps word */
 //#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
